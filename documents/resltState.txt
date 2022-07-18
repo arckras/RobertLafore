@@ -1,0 +1,10 @@
+Benchmark                                   (value)  Mode  Cnt    Score    Error  Units
+ArrayListAsymptoticComplexity.add              1001  avgt   50    0,005 ±  0,001  us/op
+ArrayListAsymptoticComplexity.add             10001  avgt   50    0,005 ±  0,001  us/op
+ArrayListAsymptoticComplexity.add            100001  avgt   50    0,007 ±  0,001  us/op
+ArrayListAsymptoticComplexity.addAndRemove     1001  avgt   50    0,002 ±  0,001  us/op
+ArrayListAsymptoticComplexity.addAndRemove    10001  avgt   50    0,002 ±  0,001  us/op
+ArrayListAsymptoticComplexity.addAndRemove   100001  avgt   50    0,002 ±  0,001  us/op
+ArrayListAsymptoticComplexity.addByIndex0      1001  avgt   50    3,485 ±  0,023  us/op
+ArrayListAsymptoticComplexity.addByIndex0     10001  avgt   50   34,240 ±  0,204  us/op
+ArrayListAsymptoticComplexity.addByIndex0    100001  avgt   50  454,285 ±  2,711  us/op
