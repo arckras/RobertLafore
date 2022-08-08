@@ -1,13 +1,12 @@
-package io.metadevs.akrasilnikov.module_2_4;
+package io.metadevs.akrasilnikov.module_2_4_ArrayList;
 
-import io.metadevs.akrasilnikov.module_2_4.ArrayList.ArrayList;
-import io.metadevs.akrasilnikov.module_2_4.OOP.Person;
+import io.metadevs.akrasilnikov.OOP4.*;
 import org.openjdk.jmh.annotations.*;
 
 @State(Scope.Benchmark)
 public class ArrayListAsymptoticComplexity {
-    Person bob = new Person("Bob", 21, 60000);
-    ArrayList<Person> arrayListPersons;
+    AbstractSpecialist bob = new Worker("Bob", 21);
+    ArrayList<AbstractSpecialist> arrayListPersons;
 
     @Param({"1001", "10001", "100001"})
     public int value;
@@ -15,7 +14,7 @@ public class ArrayListAsymptoticComplexity {
     @Benchmark
     public void add() {
        // System.out.println("DO Add" + value);
-        arrayListPersons = new ArrayList<Person>(value);
+        arrayListPersons = new ArrayList<AbstractSpecialist>(value);
         for (int i = 0; i < value - 1; i++) {
             arrayListPersons.add(bob);
         }
@@ -25,7 +24,7 @@ public class ArrayListAsymptoticComplexity {
     @Benchmark
     public void addByIndex() {
        // System.out.println("DO AddIndex" + value);
-        arrayListPersons = new ArrayList<Person>(value);
+        arrayListPersons = new ArrayList<AbstractSpecialist>(value);
         for (int i = 0; i < value - 1; i++) {
             arrayListPersons.add(value, bob);
         }
@@ -34,7 +33,7 @@ public class ArrayListAsymptoticComplexity {
     @Benchmark
     public void addAndRemove() {
         //System.out.println("DO AddAndRemove" + value);
-        arrayListPersons = new ArrayList<Person>(value);
+        arrayListPersons = new ArrayList<AbstractSpecialist>(value);
         for (int i = 0; i < value - 1; i++) {
             arrayListPersons.add(bob);
         }

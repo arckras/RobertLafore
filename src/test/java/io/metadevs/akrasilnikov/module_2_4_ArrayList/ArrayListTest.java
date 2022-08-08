@@ -1,30 +1,23 @@
-package io.metadevs.akrasilnikov.module_2_4.ArrayList;
+package io.metadevs.akrasilnikov.module_2_4_ArrayList;
 
-import io.metadevs.akrasilnikov.module_2_4.OOP.Person;
+import io.metadevs.akrasilnikov.OOP4.*;
+import io.metadevs.akrasilnikov.module_2_4_ArrayList.ArrayList;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 class ArrayListTest {
-    private ArrayList<Person> arrayListPersons = new ArrayList<>();
-    private Person alice = new Person("Alice", 18, 50000);
-    private Person bob = new Person("Bob", 25, 60000);
-    private Person ares = new Person("Ares", 40, 100000);
-    private Person nika = new Person("Nika", 60, 150000);
-
-//    @Test
-//    public void ad() {
-//        arrayListPersons.add(alice);
-//        assertThat(arrayListPersons.get(0)).isEqualTo(alice);
-//        //assertThat(arrayListPersons.add(bob)).isEqualTo(true);
-//    }
+    private ArrayList<AbstractSpecialist> arrayListPersons = new ArrayList<>();
+    private AbstractSpecialist alice = new Manager("Alice", 18);
+    private AbstractSpecialist bob = new Worker("Bob", 25);
+    private AbstractSpecialist ares = new Worker("Ares", 40);
+    private AbstractSpecialist nika = new Worker("Nika", 60);
 
     @Test
     public void ad() {
         for (int i = 0; i < 100; i++) {
             arrayListPersons.add(alice);
             assertThat(arrayListPersons.get(i)).isEqualTo(alice);
-           // assertThat(arrayListPersons.add(bob)).isEqualTo(true);
         }
     }
 
@@ -63,7 +56,7 @@ class ArrayListTest {
         arrayListPersons.add(bob);
         arrayListPersons.add(ares);
         arrayListPersons.add(nika);
-        ArrayList<Person> newArrayListPerson = (ArrayList<Person>) arrayListPersons.subList(0, 2);
+        ArrayList<AbstractSpecialist> newArrayListPerson = (ArrayList<AbstractSpecialist>) arrayListPersons.subList(0, 2);
         assertThat(newArrayListPerson.get(0)).isEqualTo(alice);
         assertThat(newArrayListPerson.get(1)).isEqualTo(bob);
         assertThat(newArrayListPerson.size()).isEqualTo(2);

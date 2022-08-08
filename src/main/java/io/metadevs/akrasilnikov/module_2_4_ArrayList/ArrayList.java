@@ -1,4 +1,4 @@
-package io.metadevs.akrasilnikov.module_2_4.ArrayList;
+package io.metadevs.akrasilnikov.module_2_4_ArrayList;
 
 import java.util.*;
 
