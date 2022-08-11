@@ -51,12 +51,12 @@ public class OOP4Test {
 //        assertThatExceptionOfType(SalaryValidateException.class).isThrownBy(() -> metadevs.hire(sasha, 10));
 //    }
 //
-    @Test
-    public void shouldFireEmployeeFromCompany() {
-        companyBender.fire(alice);
-        assertThatExceptionOfType(SpecialistNotFoundException.class).isThrownBy(() -> companyBender.specialistByName(alice));
-
-    }
+//    @Test
+//    public void shouldFireEmployeeFromCompany() {
+//        companyBender.fire(alice);
+//        assertThatExceptionOfType(SpecialistNotFoundException.class).isThrownBy(() -> companyBender.specialistByName(alice));
+//
+//    }
 
 //    @Test
 //    public void shouldThrowEmployeeNotFoundExceptionWhenTryToFireEmployeeFromCompany() {
