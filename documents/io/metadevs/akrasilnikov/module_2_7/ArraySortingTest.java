@@ -7,12 +7,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 class ArraySortingTest {
     @Test
     void bubbleSortingShouldSortArrayIntoAscendingOrder() {
-        ArraySorting array = unsortedArray();
+        ArraySorting array = unsortingArray();
         int[] sortedArray = array.bubbleSort();
         eachPreviousElementShouldBeLessThanNextElement(sortedArray);
     }
 
-    private ArraySorting unsortedArray() {
+       private ArraySorting unsortingArray() {
         int[] array = new int[10];
         for (int i = 0; i < array.length; i++) {
             array[i] = (new Random().nextInt(100));

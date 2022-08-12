@@ -11,6 +11,12 @@ public class Company {
         this.specialists = specialists;
     }
 
+    //region getters/setters
+    public ArrayList<AbstractSpecialist> getSpecialists() {
+        return specialists;
+    }
+    //endregion
+
     public void hire(AbstractSpecialist specialist, int salary) {
         if (isSpecialistBelongsToCompany(specialist)) {
             throw new SpecialistAlreadyExistsInCompanyException("This person is already in staff!");

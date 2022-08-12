@@ -1,6 +1,6 @@
 package io.metadevs.akrasilnikov.OOP4;
 
-public abstract class AbstractSpecialist {
+public abstract class AbstractSpecialist implements Comparable {
     private String name;
     private int age;
     private int salary;
@@ -51,6 +51,16 @@ public abstract class AbstractSpecialist {
     }
 
     //endregion
+
+//    @Override
+//    public int compareTo(Object o) {
+//        return 0;
+//    }
+
+    public int compareTo(AbstractSpecialist abstractSpecialist) {
+        return name.compareTo(abstractSpecialist.getName());
+    }
+
     protected boolean isAgeGreaterThanSalary(int salary) {
         return salary < this.age;
     }

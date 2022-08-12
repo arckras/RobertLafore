@@ -35,6 +35,7 @@ public class ArrayList<E> implements List<E> {
         }
         return array[index];
     }
+
     public int getSize() {
         return size;
     }
@@ -43,11 +44,10 @@ public class ArrayList<E> implements List<E> {
         this.size = size;
     }
 
-    public int getLength(){
+    public int getLength() {
         return array.length;
     }
     //endregion
-
 
     @Override
     public String toString() {
