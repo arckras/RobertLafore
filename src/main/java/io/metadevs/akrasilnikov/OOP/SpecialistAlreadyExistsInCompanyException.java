@@ -1,4 +1,4 @@
-package io.metadevs.akrasilnikov.OOP4;
+package io.metadevs.akrasilnikov.OOP;
 
 public class SpecialistAlreadyExistsInCompanyException extends IllegalArgumentException {
     public SpecialistAlreadyExistsInCompanyException(String message){

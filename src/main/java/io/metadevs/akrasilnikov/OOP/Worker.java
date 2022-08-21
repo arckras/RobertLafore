@@ -1,14 +1,9 @@
-package io.metadevs.akrasilnikov.OOP4;
+package io.metadevs.akrasilnikov.OOP;
 
 public class Worker extends AbstractSpecialist {
     public Worker(String name, int age){
         super(name,age);
         }
-
-    @Override
-    public int compareTo(Object o) {
-        return 0;
-    }
 
     @Override
     public void printPersonalInfo() {

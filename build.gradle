@@ -20,8 +20,8 @@ test {
     useJUnitPlatform()
 }
 
-//compileJava.options.encoding = 'UTF-8'
-//compileTestJava.options.encoding = 'UTF-8'
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
 
 jmh {
     //includes = ['some regular expression'] // включите шаблон (регулярное выражение) для выполнения тестов

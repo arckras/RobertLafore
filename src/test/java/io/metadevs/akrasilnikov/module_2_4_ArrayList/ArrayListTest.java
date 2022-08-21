@@ -1,6 +1,6 @@
 package io.metadevs.akrasilnikov.module_2_4_ArrayList;
 
-import io.metadevs.akrasilnikov.OOP4.*;
+import io.metadevs.akrasilnikov.OOP.*;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
