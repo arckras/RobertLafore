@@ -1,13 +1,8 @@
-package io.metadevs.akrasilnikov.OOP4;
+package io.metadevs.akrasilnikov.OOP;
 
 public class Manager extends AbstractSpecialist {
     public Manager(String name, int age) {
         super(name, age);
-    }
-
-    @Override
-    public int compareTo(Object o) {
-        return 0;
     }
 
     //    @Override
