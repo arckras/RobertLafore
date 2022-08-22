@@ -9,7 +9,6 @@ public class SortingWithComparatorTest extends AbstractHiringSpecialists {
     @Test
     public void comparatorTest() {
         hiringSpecialists();
-
         companyBender.getSpecialists().sort(AbstractSpecialist.NameComparator);
         for (int i = 0; i < companyBender.getSpecialists().size() - 1; i++) {
             AbstractSpecialist specialist1 = companyBender.getSpecialists().get(i);

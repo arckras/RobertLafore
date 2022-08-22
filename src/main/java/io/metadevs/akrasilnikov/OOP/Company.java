@@ -64,6 +64,5 @@ public class Company {
         for (AbstractSpecialist specialist : specialists) {
             specialist.printPersonalInfo();
         }
-        System.out.println();
     }
 }
