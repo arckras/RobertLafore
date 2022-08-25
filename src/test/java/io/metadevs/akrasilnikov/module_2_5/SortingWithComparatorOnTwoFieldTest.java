@@ -4,7 +4,6 @@ import io.metadevs.akrasilnikov.OOP.AbstractSpecialist;
 import org.junit.jupiter.api.Test;
 
 public class SortingWithComparatorOnTwoFieldTest extends AbstractHiringSpecialists {
-
     @Test
     public void comparatorTest() {
         hiringSpecialists();

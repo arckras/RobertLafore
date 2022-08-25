@@ -1,18 +1,18 @@
-package io.metadevs.akrasilnikov.module_2_5;
+package io.metadevs.akrasilnikov.module_2_7;
 
 import org.junit.jupiter.api.Test;
 import java.util.Random;
 import static org.assertj.core.api.Assertions.assertThat;
 
-class ArraySortingTest {
+class InsertSortingTest {
     @Test
-    void bubbleSortingShouldSortArrayIntoAscendingOrder() {
-        ArraySorting array = unsortingArray();
-        int[] sortedArray = array.bubbleSort();
+    void insertSorting() {
+        ArraySorting array = unsortedArray();
+        int[] sortedArray = array.insertSort();
         eachPreviousElementShouldBeLessThanNextElement(sortedArray);
     }
 
-       private ArraySorting unsortingArray() {
+       private ArraySorting unsortedArray() {
         int[] array = new int[10];
         for (int i = 0; i < array.length; i++) {
             array[i] = (new Random().nextInt(100));

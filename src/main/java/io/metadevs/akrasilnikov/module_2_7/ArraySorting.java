@@ -1,26 +1,12 @@
-package io.metadevs.akrasilnikov.module_2_5;
+package io.metadevs.akrasilnikov.module_2_7;
 
-public class ArraySorting implements InterfaceSorting {
+public class ArraySorting {
     private final int[] array;
 
     public ArraySorting(int[] array) {
         this.array = array;
     }
 
-    @Override
-    public int[] bubbleSort() {
-        int[] sortedArray = arrayCopy();
-        for (int i = sortedArray.length - 1; i > 1; i--) {
-            for (int j = 0; j < i; j++) {
-                if (sortedArray[j] > sortedArray[j + 1]) {
-                    swap(sortedArray, j, j + 1);
-                }
-            }
-        }
-        return sortedArray;
-    }
-
-    @Override
     public int[] insertSort() {
         int[] sortedArray = arrayCopy();
         for (int i = 1; i < sortedArray.length; i++) {
@@ -35,7 +21,6 @@ public class ArraySorting implements InterfaceSorting {
         return sortedArray;
     }
 
-    @Override
     public int[] selectSort() {
         int[] sortedArray = arrayCopy();
         int minimal;
