@@ -33,12 +33,6 @@ public class Stack<T> implements InterfaceStack {
         }
     }
 
-    public void display(int value) {
-        for (int i = 0; i < value; i++) {
-            System.out.println("Cell: "+i + " Value: " + stackArray[i]);
-        }
-    }
-
     @Override
     public T elementByIndex(int index) {
         return stackArray[index];
