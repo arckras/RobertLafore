@@ -1,12 +1,10 @@
-package module_2_8;
+package io.metadevs.akrasilnikov.module_2_8_Stack_and_Queue;
 
-import io.metadevs.akrasilnikov.module_2_8.Queue;
-import io.metadevs.akrasilnikov.module_2_8.Stack;
 import org.openjdk.jmh.annotations.*;
 
 @State(Scope.Benchmark)
 public class QueueAsymptoticComplexity {
-    @Param({"101", "1001", "10001"})
+    @Param({"1001", "10001", "100001"})
     int value;
     Queue<Integer> queue;
 

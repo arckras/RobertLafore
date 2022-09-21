@@ -1,4 +1,4 @@
-package io.metadevs.akrasilnikov.module_2_8;
+package io.metadevs.akrasilnikov.module_2_8_Stack_and_Queue;
 
 import org.junit.jupiter.api.Test;
 

@@ -1,0 +1,133 @@
+package io.metadevs.akrasilnikov.module_2_9_DoubleLinkBilateralList;
+
+public class DoubleLinkBilateralList<T> implements DoubleLinkInterface<T> {
+    public DoubleLink<T> first;
+    public DoubleLink<T> last;
+
+    public DoubleLinkBilateralList() {
+        this.first = null;
+        this.last = null;
+    }
+
+    //region MyCode
+    @Override
+    public DoubleLink deleteKey(T key) { //todo предполагается, что список не пуст
+        DoubleLink current = first;
+        while (!current.data.equals(key)) {
+            current = current.next;
+            if (current == null)
+                return null;
+        }
+        if (current == first)
+            first = current.next;
+        else
+            current.previous.next = current.next;
+        if (current == last)
+            last = current.previous;
+        else
+            current.next.previous = current.previous;
+        return current;
+    }
+
+    @Override
+    public boolean insertAfter(T key, T data) { // todo предполагается, что список не пуст
+        DoubleLink current = first;
+        while (!current.data.equals( key)) {
+            current = current.next;
+            if (current == null)
+                return false;
+        }
+        DoubleLink newLink = new DoubleLink(data);
+        if (current == last) {
+            newLink.next = null;
+            last = newLink;
+        } else {
+            newLink.next = current.next;
+            current.next.previous = newLink;
+        }
+        newLink.previous = current;
+        current.next = newLink;
+        return true;
+    }
+
+    @Override
+    public DoubleLink deleteLast() {// todo предполагается, что список не пуст)
+        if (!isEmpty()) {
+            DoubleLink temp = last;
+            if (first.next == null) {
+                first = null;
+            } else {
+                last.previous.next = null;
+            }
+            last = last.previous;
+            return temp;
+        } else {
+            return null;
+        }
+    }
+
+    @Override
+    public DoubleLink deleteFirst() {// todo предполагается, что список не пуст
+        if (!isEmpty()) {
+            DoubleLink temp = first;
+            if (first.next == null) {
+                last = null;
+            } else {
+                first.next.previous = null;
+            }
+            first = first.next;
+            return temp;
+        }
+        return null;
+    }
+
+    @Override
+    public void insertLast(T data) {
+        DoubleLink newLink = new DoubleLink(data);
+        if (isEmpty()) {
+            first = newLink;
+        } else {
+            last.next = newLink;
+            newLink.previous = last;
+        }
+        last = newLink;
+    }
+
+    @Override
+    public void insertFirst(T data) {
+        DoubleLink newLink = new DoubleLink(data);
+        if (isEmpty()) {
+            last = newLink;
+        } else {
+            first.previous = newLink;
+        }
+        newLink.next = first;
+        first = newLink;
+    }
+
+    public void displayBackward() {
+        System.out.println("\nList (last-->first):");
+        DoubleLink current = last;
+        while (current != null) {
+            current.displayLink();
+            current = current.previous;
+        }
+        System.out.println("\n");
+    }
+
+    public void displayForward() {
+        System.out.println("\nList (first-->last):");
+        DoubleLink current = first;
+        while (current != null) {
+            current.displayLink();
+            current = current.next;
+        }
+        System.out.println("\n");
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return first == null;
+    }
+    //endregion
+}
