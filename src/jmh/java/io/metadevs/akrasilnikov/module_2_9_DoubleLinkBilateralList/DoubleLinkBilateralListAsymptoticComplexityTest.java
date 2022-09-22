@@ -8,19 +8,27 @@ public class DoubleLinkBilateralListAsymptoticComplexityTest {
     int value;
 
     DoubleLinkBilateralList doubleLinkBilateralList;
+    ListIterator listIterator;
 
     @Setup(Level.Invocation)
     public void prepare() {
         doubleLinkBilateralList = new DoubleLinkBilateralList();
-        for (int i = 0; i <= value - 1; i++) {
+        listIterator = doubleLinkBilateralList.getIterator();
+        for (int i = 0; i <= value - 2; i++) {
             doubleLinkBilateralList.insertLast(i);
         }
+        doubleLinkBilateralList.displayForward();
     }
 
-    @Benchmark
-    public void InsertFirst() {
-        doubleLinkBilateralList.insertFirst(value);
-    }
+//    @TearDown(Level.Invocation)
+//    public void end(){
+//        doubleLinkBilateralList.displayForward();
+//    }
+//
+//    @Benchmark
+//    public void InsertFirst() {
+//        doubleLinkBilateralList.insertFirst(value);
+//    }
 
     @Benchmark
     public void InsertLast() {
@@ -45,5 +53,10 @@ public class DoubleLinkBilateralListAsymptoticComplexityTest {
     @Benchmark
     public void DeleteKeyWith() {
         doubleLinkBilateralList.deleteKey(50);
+    }
+
+    @Benchmark
+    public void iterator() {
+        listIterator.insertAfter(234);
     }
 }

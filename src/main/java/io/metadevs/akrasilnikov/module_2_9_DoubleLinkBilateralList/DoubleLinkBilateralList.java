@@ -1,13 +1,35 @@
 package io.metadevs.akrasilnikov.module_2_9_DoubleLinkBilateralList;
 
 public class DoubleLinkBilateralList<T> implements DoubleLinkInterface<T> {
-    public DoubleLink<T> first;
-    public DoubleLink<T> last;
+    private DoubleLink<T> first;
+    private DoubleLink<T> last;
 
     public DoubleLinkBilateralList() {
         this.first = null;
         this.last = null;
     }
+
+    //region Getters/Setters
+    public DoubleLink<T> getFirst() {
+        return first;
+    }
+
+    public void setFirst(DoubleLink<T> first) {
+        this.first = first;
+    }
+
+    public DoubleLink<T> getLast() {
+        return last;
+    }
+
+    public void setLast(DoubleLink<T> last) {
+        this.last = last;
+    }
+
+    public ListIterator getIterator() {
+        return new ListIterator(this);
+    }
+    //endregion
 
     //region MyCode
     @Override
@@ -32,7 +54,7 @@ public class DoubleLinkBilateralList<T> implements DoubleLinkInterface<T> {
     @Override
     public boolean insertAfter(T key, T data) { // todo предполагается, что список не пуст
         DoubleLink current = first;
-        while (!current.data.equals( key)) {
+        while (!current.data.equals(key)) {
             current = current.next;
             if (current == null)
                 return false;

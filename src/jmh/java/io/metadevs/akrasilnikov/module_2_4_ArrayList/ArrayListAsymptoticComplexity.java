@@ -31,8 +31,7 @@ public class ArrayListAsymptoticComplexity {
     }
 
     @Benchmark
-    public void addAndRemove() {
-        arrayListPersons.add(alice);
+    public void remove() {
         arrayListPersons.remove(0);
     }
 }

@@ -6,6 +6,15 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 class DoubleLinkBilateralListTest {
     DoubleLinkBilateralList doubleLinkBilateralList = new DoubleLinkBilateralList();
+    ListIterator iterator = doubleLinkBilateralList.getIterator();
+
+    @Test
+    void iterator() {
+        iterator.insertAfter(20);
+        assertThat(doubleLinkBilateralList.getFirst().data).isEqualTo((long) 20);
+        iterator.insertBefore(10);
+        assertThat(doubleLinkBilateralList.getFirst().data).isEqualTo((long) 10);
+    }
 
     @Test
     void deleteKey() {
@@ -14,7 +23,7 @@ class DoubleLinkBilateralListTest {
         doubleLinkBilateralList.insertFirst(300);
         doubleLinkBilateralList.deleteKey(300);
 
-        assertThat(doubleLinkBilateralList.first).isEqualTo(doubleLinkBilateralList.deleteKey(200));
+        assertThat(doubleLinkBilateralList.getFirst()).isEqualTo(doubleLinkBilateralList.deleteKey(200));
         assertThat(doubleLinkBilateralList.deleteKey(400)).isEqualTo(null);
     }
 
@@ -28,7 +37,7 @@ class DoubleLinkBilateralListTest {
 
         doubleLinkBilateralList.deleteFirst();
 
-        assertThat(doubleLinkBilateralList.first.data).isEqualTo(300);
+        assertThat(doubleLinkBilateralList.getFirst().data).isEqualTo(300);
         assertThat(doubleLinkBilateralList.insertAfter(400, 300)).isEqualTo(false);
     }
 
@@ -38,7 +47,7 @@ class DoubleLinkBilateralListTest {
         doubleLinkBilateralList.insertFirst(200);
         doubleLinkBilateralList.insertFirst(300);
 
-        assertThat(doubleLinkBilateralList.last).isEqualTo(doubleLinkBilateralList.deleteLast());
+        assertThat(doubleLinkBilateralList.getLast()).isEqualTo(doubleLinkBilateralList.deleteLast());
 
         doubleLinkBilateralList.deleteLast();
         doubleLinkBilateralList.deleteLast();
@@ -50,7 +59,7 @@ class DoubleLinkBilateralListTest {
         doubleLinkBilateralList.insertFirst(100);
         doubleLinkBilateralList.insertFirst(200);
         doubleLinkBilateralList.insertFirst(300);
-        assertThat(doubleLinkBilateralList.first).isEqualTo(doubleLinkBilateralList.deleteFirst());
+        assertThat(doubleLinkBilateralList.getFirst()).isEqualTo(doubleLinkBilateralList.deleteFirst());
         doubleLinkBilateralList.deleteFirst();
         doubleLinkBilateralList.deleteFirst();
         assertThat(doubleLinkBilateralList.deleteFirst()).isEqualTo(null);
@@ -61,15 +70,16 @@ class DoubleLinkBilateralListTest {
         doubleLinkBilateralList.insertLast(100);
         doubleLinkBilateralList.insertLast(200);
         doubleLinkBilateralList.insertLast(300);
-        assertThat(doubleLinkBilateralList.first.data).isEqualTo(100);
-        assertThat(doubleLinkBilateralList.last.data).isEqualTo(300);
+        assertThat(doubleLinkBilateralList.getFirst().data).isEqualTo(100);
+        assertThat(doubleLinkBilateralList.getLast().data).isEqualTo(300);
     }
+
     @Test
     void insertFirst() {
         doubleLinkBilateralList.insertFirst(100);
         doubleLinkBilateralList.insertFirst(200);
         doubleLinkBilateralList.insertFirst(300);
-        assertThat(doubleLinkBilateralList.first.data).isEqualTo(300);
-        assertThat(doubleLinkBilateralList.last.data).isEqualTo(100);
+        assertThat(doubleLinkBilateralList.getFirst().data).isEqualTo(300);
+        assertThat(doubleLinkBilateralList.getLast().data).isEqualTo(100);
     }
 }
