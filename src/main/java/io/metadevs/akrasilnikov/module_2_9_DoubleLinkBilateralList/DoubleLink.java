@@ -10,6 +10,6 @@ public class DoubleLink<T> {
     }
 
     public void displayLink() {
-        System.out.print(data + " ");
+        System.out.println("\nnext: " + next + ";\nprevious: " + previous + ";\ndata: " + data);
     }
 }

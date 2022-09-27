@@ -9,7 +9,7 @@ class DoubleLinkBilateralListTest {
     ListIterator iterator = doubleLinkBilateralList.getIterator();
 
     @Test
-    void iterator() {
+    void iteratorInsertAfterBefore() {
         iterator.insertAfter(20);
         assertThat(doubleLinkBilateralList.getFirst().data).isEqualTo((long) 20);
         iterator.insertBefore(10);
@@ -32,7 +32,6 @@ class DoubleLinkBilateralListTest {
         doubleLinkBilateralList.insertFirst(100);
         doubleLinkBilateralList.insertFirst(200);
         doubleLinkBilateralList.insertFirst(400);
-
         assertThat(doubleLinkBilateralList.insertAfter(400, 300)).isEqualTo(true);
 
         doubleLinkBilateralList.deleteFirst();

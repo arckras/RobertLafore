@@ -33,8 +33,11 @@ public class DoubleLinkBilateralList<T> implements DoubleLinkInterface<T> {
 
     //region MyCode
     @Override
-    public DoubleLink deleteKey(T key) { //todo предполагается, что список не пуст
+    public DoubleLink deleteKey(T key) {
         DoubleLink current = first;
+        if (isEmpty()) {
+            return null;
+        }
         while (!current.data.equals(key)) {
             current = current.next;
             if (current == null)
@@ -52,7 +55,7 @@ public class DoubleLinkBilateralList<T> implements DoubleLinkInterface<T> {
     }
 
     @Override
-    public boolean insertAfter(T key, T data) { // todo предполагается, что список не пуст
+    public boolean insertAfter(T key, T data) {
         DoubleLink current = first;
         while (!current.data.equals(key)) {
             current = current.next;
@@ -73,25 +76,26 @@ public class DoubleLinkBilateralList<T> implements DoubleLinkInterface<T> {
     }
 
     @Override
-    public DoubleLink deleteLast() {// todo предполагается, что список не пуст)
-        if (!isEmpty()) {
-            DoubleLink temp = last;
-            if (first.next == null) {
-                first = null;
-            } else {
-                last.previous.next = null;
-            }
-            last = last.previous;
-            return temp;
-        } else {
+    public DoubleLink deleteLast() {
+        DoubleLink temp = last;
+        if (isEmpty()) {
             return null;
         }
+        if (first.next == null) {
+            first = null;
+        } else {
+            last.previous.next = null;
+        }
+        last = last.previous;
+        return temp;
     }
 
     @Override
-    public DoubleLink deleteFirst() {// todo предполагается, что список не пуст
-        if (!isEmpty()) {
+    public DoubleLink deleteFirst() {
             DoubleLink temp = first;
+        if (isEmpty()) {
+            return null;
+        }
             if (first.next == null) {
                 last = null;
             } else {
@@ -99,8 +103,6 @@ public class DoubleLinkBilateralList<T> implements DoubleLinkInterface<T> {
             }
             first = first.next;
             return temp;
-        }
-        return null;
     }
 
     @Override
@@ -122,8 +124,8 @@ public class DoubleLinkBilateralList<T> implements DoubleLinkInterface<T> {
             last = newLink;
         } else {
             first.previous = newLink;
+            newLink.next = first;
         }
-        newLink.next = first;
         first = newLink;
     }
 
@@ -143,6 +145,7 @@ public class DoubleLinkBilateralList<T> implements DoubleLinkInterface<T> {
         while (current != null) {
             current.displayLink();
             current = current.next;
+            System.out.println("first: "+ first+"\nlast: "+last);
         }
         System.out.println("\n");
     }
