@@ -7,17 +7,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 class InsertSortingTest {
     @Test
     void insertSorting() {
-        ArraySorting array = unsortedArray();
+        ArrayInsertSelectSorting array = unsortedArray();
         int[] sortedArray = array.insertSort();
         eachPreviousElementShouldBeLessThanNextElement(sortedArray);
     }
 
-       private ArraySorting unsortedArray() {
+       private ArrayInsertSelectSorting unsortedArray() {
         int[] array = new int[10];
         for (int i = 0; i < array.length; i++) {
             array[i] = (new Random().nextInt(100));
         }
-        return new ArraySorting(array);
+        return new ArrayInsertSelectSorting(array);
     }
 
     private void eachPreviousElementShouldBeLessThanNextElement(int[] array) {

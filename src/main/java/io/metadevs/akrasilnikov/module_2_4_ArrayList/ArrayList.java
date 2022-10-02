@@ -40,10 +40,6 @@ public class ArrayList<E> implements List<E> {
         return size;
     }
 
-    public void setSize(int size) {
-        this.size = size;
-    }
-
     public int getLength() {
         return array.length;
     }

@@ -7,17 +7,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 class BubbleSortingTest {
     @Test
     void bubbleSorting() {
-        ArraySorting array = unsortedArray();
+        ArrayBubbleSorting array = unsortedArray();
         int[] sortedArray = array.bubbleSort();
         eachPreviousElementShouldBeLessThanNextElement(sortedArray);
     }
 
-    private ArraySorting unsortedArray() {
+    private ArrayBubbleSorting unsortedArray() {
         int[] array = new int[10];
         for (int i = 0; i < array.length; i++) {
             array[i] = (new Random().nextInt(100));
         }
-        return new ArraySorting(array);
+        return new ArrayBubbleSorting(array);
     }
 
     private void eachPreviousElementShouldBeLessThanNextElement(int[] array) {

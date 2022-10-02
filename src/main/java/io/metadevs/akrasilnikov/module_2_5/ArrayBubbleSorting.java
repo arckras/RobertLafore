@@ -1,11 +1,13 @@
 package io.metadevs.akrasilnikov.module_2_5;
 
-public class ArraySorting {
+public class ArrayBubbleSorting {
     private final int[] array;
-    public ArraySorting(int[] array) {
+
+    public ArrayBubbleSorting(int[] array) {
         this.array = array;
     }
-    public int[] bubbleSort() {
+
+        public int[] bubbleSort() {
         int[] sortingArray = arrayCopy();
         for (int i = sortingArray.length - 1; i > 1; i--) {
             for (int j = 0; j < i; j++) {

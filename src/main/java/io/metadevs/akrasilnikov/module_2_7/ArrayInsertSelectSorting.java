@@ -1,9 +1,9 @@
 package io.metadevs.akrasilnikov.module_2_7;
 
-public class ArraySorting {
+public class ArrayInsertSelectSorting {
     private final int[] array;
 
-    public ArraySorting(int[] array) {
+    public ArrayInsertSelectSorting(int[] array) {
         this.array = array;
     }
 
