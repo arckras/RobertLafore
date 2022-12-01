@@ -10,4 +10,6 @@ public interface HashMapInterface<T> {
     DataItem<T> find(int key);
 
     DataItem<T> delete(int key);
+
+     void display(int value);
 }

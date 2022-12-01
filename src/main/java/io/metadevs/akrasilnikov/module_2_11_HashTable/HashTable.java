@@ -16,9 +16,13 @@ public class HashTable<T> implements HashMapInterface<T> {
         return hashArray;
     }
 
-    public void display() {
+    public void display(int value) {
+        int i = 0;
         for (DataItem<T> t : hashArray) {
-            System.out.println(t);
+            if (i > (value - 5) & i <= value) {
+                System.out.println(t.getKeyData() + ": " + t.getData());
+            }
+            i++;
         }
     }
 
